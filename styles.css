@@ -1,0 +1,31 @@
+body {
+  display: grid;
+  place-content: center;
+}
+
+.calculator-card {
+  background-color: black;
+  width: 300px;
+  height: 500px;
+}
+
+.display {
+  background-color: grey;
+  height: 100px;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.test {
+  background-color: green;
+  width: 30px;
+  height: 30px;
+}
+
+.display-result {
+  font-size: 3rem;
+}
