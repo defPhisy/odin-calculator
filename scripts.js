@@ -34,11 +34,12 @@ function operate() {
 
     case "÷":
       if (n2 == 0) {
-        solution = "0 division error";
+        solution = "ERROR";
+        equation = "zero division"
+      } else {
+        solution = divide(n1, n2);
         break;
       }
-      solution = divide(n1, n2);
-      break;
 
     default:
       console.log("Invalid operator. Use only + - * /");
@@ -78,6 +79,9 @@ function evalInput() {
       operate();
       numberStack = [];
       moveToNumberStack(solution);
+      if (solution === "error") {
+        resetInput();
+      }
       if (solution.toString().length >= 7) {
         solution = solution.toExponential(2);
       }
