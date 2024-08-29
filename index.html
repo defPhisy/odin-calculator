@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f26c72a963.js" crossorigin="anonymous"></script>
     <script defer src="scripts.js"></script>
 
     <title>Document</title>
@@ -13,34 +14,46 @@
 
 <body>
     <div class="calculator-card">
+
         <div class="display">
             <div class="display-header"></div>
             <div class="display-result"></div>
         </div>
-        <div class="btn numbers">
-            <button class="num">1</button>
-            <button class="num">2</button>
-            <button class="num">3</button>
-            <button class="num">4</button>
-            <button class="num">5</button>
-            <button class="num">6</button>
-            <button class="num">7</button>
-            <button class="num">8</button>
-            <button class="num">9</button>
-            <button class="num">0</button>
-            <button class="dot">.</button>
+
+        <div class="calc-btns">
+            <div class="removers">
+                <button id="reset">AC</button>
+                <button id="del"><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+
+            <div class="numbers">
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="num zero">0</button>
+                <button class="dot">.</button>
+            </div>
+
+            <div class="operators">
+                <button class="operator add">+</button>
+                <button class="operator subtract">-</button>
+                <button class="operator multiply">×</button>
+                <button class="operator divide">÷</button>
+                <button id="eval">=</button>
+            </div>
+
+
+
         </div>
-        <div class="operators">
-            <button class="operator add">+</button>
-            <button class="operator subtract">-</button>
-            <button class="operator multiply">×</button>
-            <button class="operator divide">÷</button>
-            <button id="eval">=</button>
-        </div>
-        <div class="clear">
-            <button id="reset">AC</button>
-        </div>
+
     </div>
+
 </body>
 
 </html>
