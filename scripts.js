@@ -47,8 +47,12 @@ function operate() {
 }
 
 function numInput(e) {
-  numberBuffer += e.target.textContent;
-  printToDisplay("main", numberBuffer);
+  if (numberBuffer.toString().length >= 7) {
+    return;
+  } else {
+    numberBuffer += e.target.textContent;
+    printToDisplay("main", numberBuffer);
+  }
 }
 
 function dotInput(e) {
@@ -74,6 +78,9 @@ function evalInput() {
       operate();
       numberStack = [];
       moveToNumberStack(solution);
+      if (solution.toString().length >= 7) {
+        solution = solution.toExponential(2);
+      }
       printToDisplay("main", solution);
       printToDisplay("top", equation);
     }
@@ -109,6 +116,16 @@ function resetInput() {
   equation = "";
 }
 
+function del() {
+  if (numberBuffer) {
+    let newNumArray = numberBuffer.split("");
+    newNumArray.pop();
+    newNum = newNumArray.join("");
+    numberBuffer = newNum;
+    printToDisplay("main", numberBuffer);
+  }
+}
+
 let equation = "";
 let numberBuffer = "";
 let numberStack = [];
@@ -132,3 +149,6 @@ evalButton.addEventListener("click", evalInput);
 
 const resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", resetInput);
+
+const deleteButton = document.querySelector("#del");
+deleteButton.addEventListener("click", del);
